@@ -1,0 +1,40 @@
+First, Install Docker on your Linux System 
+
+Task-1
+1)	Pull the ubuntu (ubuntu:latest) image & Run image by giving name ubuntu-test1 also allow to be interactive mode for execute bash script.
+2)	Go inside ubuntu-test1 container  and Check the ubuntu OS version
+3)	Run Update command on ubuntu-test1
+4)	Install packages httpd and vim
+5)	Create a new file “index.html”  on location -> /var/www/html/
+6)	Paste the highlighted content into index.html ->  <h1> Hello from Ubuntu-Httpd server </h1>   
+7)	Now try to start/enable the httpd service and also check the browser for running httpd server page. 
+8)	stop the ubuntu-test1 container
+
+Task-2
+1)	Pull nginx  latest image and Run it by giving name webserver-1 also assign port No 80 for nginx service.
+2)	Check nginx on browser by using [YourSystemipAddress:AssignedPortNo] for its running  home page. 
+3)	Run the “docker container --help"  for learn the Administrative command of docker.
+4)	How to Check/fetch the logs of Running container. 
+5)	Do not stop the container Explain, how does background process works when you hit “docker run” command
+6)	What are the command options for interative tertminal, name, port expose, port publish, environment  and detached mode while running “docker run” commands
+7)	What are the difference between publish and expose for port in “docker run” commands.
+8)	What are the difference between and also Explain the following command – “docker ps” and “docker ps –a” write down each field from any one of them
+9)	Remove all running as well stopped containers.
+10)	Verify it removed give command name.
+
+Task-3 : Manage Multiple container at a time
+1)	Run nginx, mysql and httpd(apache) server by following below mentioned instructions
+-	Run all of them with command options with detached mode, and give name to them
+-	Nginx should be listen on 81:80, httpd on 82:80, mysql on 3306:3306
+-	When running mysql, use the – environment option  or “ –e “  to pass in MYSQL_RANDOM_ROOT_PASSWORD=yes 
+-	User “docker container logs” on mysql to find the random password it created on startup
+-	remove containers forcefully
+
+Task-4: Process Monitoring – for check what`s going on in container 
+1)	docker container top – process list in one container
+2)	docker container inspect – details of one container config
+3)	docker container stats – performance stats for all containers
+By using above mentioned process monitoring command check the stats, inspect and process list in the running container. Make new containers for list as mentioned below.
+-	Nginx
+-	Mysql
+Note : for creating both container please follow the Task-3 for Attributes.
