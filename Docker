@@ -10,6 +10,7 @@ Task-1
 7)	Now try to start/enable the httpd service and also check the browser for running httpd server page. 
 8)	stop the ubuntu-test1 container
 
+=====================================================
 Task-2
 1)	Pull nginx  latest image and Run it by giving name webserver-1 also assign port No 80 for nginx service.
 2)	Check nginx on browser by using [YourSystemipAddress:AssignedPortNo] for its running  home page. 
@@ -21,6 +22,7 @@ Task-2
 8)	What are the difference between and also Explain the following command – “docker ps” and “docker ps –a” write down each field from any one of them
 9)	Remove all running as well stopped containers.
 10)	Verify it removed give command name.
+=====================================================
 
 Task-3 : Manage Multiple container at a time
 1)	Run nginx, mysql and httpd(apache) server by following below mentioned instructions
@@ -30,6 +32,7 @@ Task-3 : Manage Multiple container at a time
 -	User “docker container logs” on mysql to find the random password it created on startup
 -	remove containers forcefully
 
+=====================================================
 Task-4: Process Monitoring – for check what`s going on in container 
 1)	docker container top – process list in one container
 2)	docker container inspect – details of one container config
@@ -38,3 +41,30 @@ By using above mentioned process monitoring command check the stats, inspect and
 -	Nginx
 -	Mysql
 Note : for creating both container please follow the Task-3 for Attributes.
+=============================================
+Task-5:  shell inside running  containers
+Usage for:
+-	Docker container run –it  -> start new container interactively
+-	Docker container exec –it  -> run additional command in existing container 
+
+1)	Pull new image of Linux distribution OS named “alpine” as  latest
+2)	Create container as interactive, give name and also assign “sh” (shell) mode to get inside the container
+3)	 Try to update package  with “apk” and also install curl software – package manager is “apk”
+Exit from container and stop it.
+=====================================================
+Task-6 : Docker Networks
+-	 For Show network -> $ docker network ls
+-	For  Inspect a network -> $ docker network Inspect
+-	For  Create own  network -> $ docker network Create <yourNwName>
+-	For  Attach a network to container -> $ docker network connect 
+-	For Detach a network from container -> $ docker network disconnect 
+
+1)	Create one bridge network name “my_net”
+2)	Create nginx container and Assign it to  “my_net” network
+3)	Inspect nginx container  for new Assigned “my_net” network
+4)	Assign default bridge network to nginx container
+5)	At last detach “my_net” network from container, there should be remain one default bridge network to nginx container
+6)	Check ping for another running container with different network & ip address  and also for ContainerName as well
+
+=====================================================
+
