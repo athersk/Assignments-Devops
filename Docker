@@ -67,4 +67,39 @@ Task-6 : Docker Networks
 6)	Check ping for another running container with different network & ip address  and also for ContainerName as well
 
 =====================================================
+Task-7 : Dockerfile to buid own/custom  images
+-	Understand the concept of Dockerfile and how to write it.
+-	Signup with dockerhub site with your mail.
+-	Check the administrative commands to build, tag, push the image
+[Beginners Level]
+1)	Write a Dockerfile for building a ubuntu custom image containing with a file “testfile” on location /tmp/testfile 
+2)	Content would be in testfile -> Hello my Name is XYZ
+3)	Give Name with tag and build it on current location
+4)	Run custom image and check for the testfile
+5)	Remove your build image from your system 
+6)	Try to run the container by pulling image and verify the custom changes.
 
+=================================================================
+
+Task-8 : Persistent storage [Volumes  &&  Bind mount]
+
+-	Please Gather information on Persistent storage (Volumes and  Bind mount)
+INFO: persistent storage stands for data of your Application can be saved on storage location that will be remain after deletetion /crashed state of your Application 
+For Solution, Docker has given two main ways to do it i.e Volumes and  Bind mount
+
+Volume: 
+-	 we need to first create volumes manually and assigned it to container at the time of container creation. [$ docker volume create mytestvol-1]
+-	Storage Location or Mount Point of new created volume will be dockers filesystem -> “/var/lib/docker/volumes/<YourCreatedVolumeName>/_data” for same you can inspect by newly created volume.
+-	Assignment of Volume to container [$ -v mytestvol-1:/path of/ container/ volume ] just add this section while creating your new container.
+
+Bind Mount:
+-	Just need a specific directory in a local and other thing will remain same. 
+-	Assignment of Bind Mount to container [$ -v $(pwd):/path of/ container/volume ] just add this section while creating your new container.
+-	It will map the both directory and we can commit changes without going inside the container, the specific directory will be our entrance to access the container files.
+
+1)	Try to create Jenkins container with each Persistent storage type 
+2)	Container name will be jenkins1  port 8080:8080, 50000: 50000 and jenkins2 port will be 8081:8080, 50001: 50000
+3)	Container`s volume location will be - > /var/jenkins_home 
+4)	You can verify the details from site -> https://hub.docker.com/_/jenkins
+
+=================================================================
